@@ -29,7 +29,7 @@ x-backend-variables: &backend-variables
   SECRET_KEY: MUdvayne39437!@#
   BASEROW_JWT_SIGNING_KEY: ${BASEROW_JWT_SIGNING_KEY:-}
   DATABASE_PASSWORD: MUdvayne39437!@#
-  REDIS_PASSWORD: ${REDIS_PASSWORD:?}
+  REDIS_PASSWORD: ""
   # If you manually change this line make sure you also change the duplicate line in
   # the web-frontend service.
   BASEROW_PUBLIC_URL: https://baserow.sunderedechoes.com
@@ -353,7 +353,7 @@ services:
   redis:
     image: redis:6
     restart: unless-stopped
-    command: redis-server --requirepass ${REDIS_PASSWORD:?}
+    command: redis-server --requirepass
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
     networks:
