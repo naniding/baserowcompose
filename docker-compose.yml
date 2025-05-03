@@ -221,7 +221,6 @@ services:
       PRIVATE_BACKEND_URL: ${PRIVATE_BACKEND_URL:-http://backend:8000}
       BASEROW_PUBLIC_URL: https://baserow.sunderedechoes.com
     volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - media:/baserow/media
       - caddy_config:/config
       - caddy_data:/data
