@@ -28,7 +28,7 @@ x-backend-variables: &backend-variables
   # Most users should only need to set these first four variables.
   SECRET_KEY: MUdvayne39437!@#
   BASEROW_JWT_SIGNING_KEY: ${BASEROW_JWT_SIGNING_KEY:-}
-  DATABASE_PASSWORD: 'MUdvayne39437!@#'
+  DATABASE_PASSWORD: 'testpass123'
   REDIS_PASSWORD: ""
   # If you manually change this line make sure you also change the duplicate line in
   # the web-frontend service.
@@ -337,7 +337,7 @@ services:
     restart: unless-stopped
     environment:
       - POSTGRES_USER=${DATABASE_USER:-baserow}
-      - POSTGRES_PASSWORD= 'MUdvayne39437!@#'
+      - POSTGRES_PASSWORD= 'testpass123'
       - POSTGRES_DB=${DATABASE_NAME:-baserow}
     healthcheck:
       test: [ "CMD-SHELL", "su postgres -c \"pg_isready -U ${DATABASE_USER:-baserow}\"" ]
